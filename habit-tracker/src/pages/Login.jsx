@@ -9,7 +9,7 @@ function Login() {
     try {
 
       const response = await fetch(
-        "http://localhost:5000/login",
+        "https://habitly-rpdo.onrender.com/login",
         {
           method: "POST",
           headers: {

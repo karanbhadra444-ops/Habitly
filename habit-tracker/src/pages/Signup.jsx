@@ -10,7 +10,7 @@ function Signup() {
   const handleSignup = async () => {
   try {
     const response = await fetch(
-      "http://localhost:5000/signup",
+      "https://habitly-rpdo.onrender.com/signup",
       {
         method: "POST",
         headers: {

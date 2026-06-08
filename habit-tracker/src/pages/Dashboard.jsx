@@ -7,7 +7,7 @@ function Dashboard() {
   
   const [habits, setHabits] = useState([]);
   useEffect(() => {
-  fetch("http://localhost:5000/habits", {
+  fetch("https://habitly-rpdo.onrender.com/habits", {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`
     }
@@ -32,7 +32,7 @@ function Dashboard() {
     history: {},
   };
 
- const response = await fetch("http://localhost:5000/habits", {
+ const response = await fetch("https://habitly-rpdo.onrender.com/habits", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -76,7 +76,7 @@ function Dashboard() {
 
 const deleteHabit = async (id) => {
   const response = await fetch(
-    `http://localhost:5000/habits/${id}`,
+    `https://habitly-rpdo.onrender.com/habits/${id}`,
     {
       method: "DELETE",
       headers: {
@@ -94,7 +94,7 @@ const deleteHabit = async (id) => {
 
  const saveHabit = async (habitToSave) => {
   const response = await fetch(
-    `http://localhost:5000/habits/${habitToSave._id}`,
+    `https://habitly-rpdo.onrender.com/habits/${habitToSave._id}`,
     {
       method: "PUT",
       headers: {
@@ -147,7 +147,7 @@ const deleteHabit = async (id) => {
   }
   
   useEffect(() => {
-  fetch("http://localhost:5000/stats/completed-today", {
+  fetch("https://habitly-rpdo.onrender.com/stats/completed-today", {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`
     }
@@ -159,7 +159,7 @@ const deleteHabit = async (id) => {
 }, [habits]);
 
   const getSuggestions = async () => {
-  const res = await fetch("http://localhost:5000/ai-suggestions", {
+  const res = await fetch("https://habitly-rpdo.onrender.com/ai-suggestions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ goal }),
